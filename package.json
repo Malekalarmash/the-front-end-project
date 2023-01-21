@@ -1,0 +1,19 @@
+{
+  "name": "the-front-end-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Malekalarmash/the-front-end-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Malekalarmash/the-front-end-project/issues"
+  },
+  "homepage": "https://github.com/Malekalarmash/the-front-end-project#readme"
+}
