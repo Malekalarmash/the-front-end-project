@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Malekalarmash/the-front-end-project/issues"
   },
-  "homepage": "https://github.com/Malekalarmash/the-front-end-project#readme"
+  "homepage": "https://github.com/Malekalarmash/the-front-end-project#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.0-alpha1"
+  }
 }

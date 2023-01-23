@@ -1,0 +1,54 @@
+
+main{
+    background-color: #E8E8E8 ;
+}
+
+div.container{
+    background-color:#273342 !important;
+}
+
+div.bg-body-tertiary{
+    max-width: ;
+}
+
+img.img1{
+    width: 100px;
+    height: 100px;
+}
+section.cards {
+    display: flex;
+    width: 80%;
+    min-height: 80vh;
+    flex-wrap: wrap;
+  }
+
+div.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    flex: 1 1 200px;
+  }
+
+ div.card {
+    width: 20vw;
+  }
+
+main{
+    display: flex;
+
+}
+
+
+  /* main section.second section.cards div.card p {
+    font-size: 1.25rem;
+  }
+  main section.second section.cards div.card a {
+    margin: 1rem 0rem;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    background-color: #09777d;
+    color: white;
+    font-size: 1.25rem;
+  } */
