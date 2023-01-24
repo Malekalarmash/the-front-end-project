@@ -1,6 +1,7 @@
 
 main{
     background-color: #E8E8E8 ;
+    flex-wrap: wrap;
 }
 
 div.container{
@@ -11,10 +12,10 @@ div.bg-body-tertiary{
     max-width: ;
 }
 
-img.img1{
+/* img.img1{
     width: 100px;
     height: 100px;
-}
+} */
 section.cards {
     display: flex;
     width: 80%;
@@ -28,27 +29,28 @@ div.card {
     align-items: center;
     justify-content: space-around;
     padding: 1rem;
-    flex: 1 1 200px;
-  }
-
- div.card {
-    width: 20vw;
+    flex: 1 1 300px;
   }
 
 main{
     display: flex;
 
 }
+button.trash{
+    position: relative;
+    left: 100px;
+    border: 10px none transparent;
+}
+button.refresh{
+    position: relative;
+    font-size: 2rem;
+    border-style: none;
+}
+button.clearall{
+    margin-top: 15px; 
+    border-style: none;
+    position: absolute;
+     right: 10px;
+}
 
 
-  /* main section.second section.cards div.card p {
-    font-size: 1.25rem;
-  }
-  main section.second section.cards div.card a {
-    margin: 1rem 0rem;
-    text-decoration: none;
-    padding: 1rem 1.5rem;
-    background-color: #09777d;
-    color: white;
-    font-size: 1.25rem;
-  } */
