@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../web-pt-11-2022"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "the-front-end-project"
+	}
+}
