@@ -1,9 +1,10 @@
-// let zipCode= document.getElementById(zipCode)
- let info;
-// let displayData = document.getElementById(displayData)
+let zipCode= document.getElementById("zipcode")
+ let homeInfo;
+let showData = document.getElementById("showData")
 
 
-async function zipCode(zipcode) {
+
+async function getForSale() {
     const options = {
       method: 'GET',
       headers: {
@@ -13,24 +14,41 @@ async function zipCode(zipcode) {
     };
   
     try {
-      const response = await fetch(`https://us-real-estate.p.rapidapi.com/v2/for-sale-by-zipcode?zipcode=${zipcode}&offset=0&limit=2`, options);
-      const data = await response.json();
-      
-      //console.log(data.data.home_search.results)
+      const response = await fetch(`https://us-real-estate.p.rapidapi.com/v2/for-sale-by-zipcode?zipcode=${zipcode.value}&offset=0&limit=15`, options);
+      const result = await response.json();
+  
+      homeInfo = result.data.home_search.results
 
-      info = data.data.home_search.results
+    // Saves the 
+      showData.innerHTML = render(homeInfo)
+      // console.log(linkInfo)
 
-      console.log("Primary Photo:", info[0].primary_photo);
-      console.log("List Price:", info[0].list_price);
-      console.log("Sqft:", info[0].description.sqft);
-      console.log("Address:", info[0].location.address);
-
-    } catch (err) {
-      console.error(err);
+    } catch  {
+      err => console.error(err);
     }
   }
 
-  zipCode("77590");
+//   Fucntion to loop inside the results array and to create a card that diplays the code
+  function render(objectArray){
+    let homeInfoArr = [];
+    objectArray.map(house => {
+      homeInfoArr.push(house)
+      // console.log(house)
+        return `
+        <div class="card mt-5" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">The Price:$ ${house.list_price}</h5>
+                <p class="card-text">The Address:${house.location.address.line} ${house.location.address.city}, ${house.location.address.state}, ${house.location.address.postal_code}</p>
+                <a href="https://www.realtor.com/realestateandhomes-detail/${house.permalink}" class="btn btn-primary">Chick The Listing</a>
+            </div>      `     
+  }
+     )
+    
+    console.log(homeInfoArr)
+    return homeInfoArr;
+  
+}
 
 
 

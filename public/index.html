@@ -14,9 +14,19 @@
         <div class="hero-image">
             <img src="../img/banner.svg" class="img-fluid" alt="JDMJ">
         </div>
+        <div class="input-group mb-3">
+            <input type="number" placeholder="Zip Code" id = "zipcode"class="form-control">
+          </div>
         <div class="d-grid gap-3 col-6 mx-auto mb-5">
-            <button type="button" class="btn">Search</button>
+            <button type="button" class="btn" onclick="getForSale()">Search</button>
+        </div>
+        <!-- The cards will show here!   -->
+        <div class= "row">
+            <div id="showData" class="col-6">
+
+            </div>
         </div>
     </div>
+    <script src="../public/index.js"></script>
 </body>
 </html>
