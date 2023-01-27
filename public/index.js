@@ -1,8 +1,6 @@
 let zipCode= document.getElementById("zipcode")
- let homeInfo;
+let homeInfo;
 let showData = document.getElementById("showData")
-
-
 
 async function getForSale() {
     const options = {
@@ -46,7 +44,7 @@ async function getForSale() {
      )
     
     console.log(homeInfoArr)
-    return homeInfoArr;
+    return homeInfoArr
   
 }
 
