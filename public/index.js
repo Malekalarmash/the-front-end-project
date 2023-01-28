@@ -33,19 +33,20 @@ async function getForSale() {
     let homeInfoArr = objectArray.map(house => {
         return `
         <div class="card mt-5" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="${house.primary_photo.href}" class="card-img-top" alt="...">
                 <div class="card-body">
                 <h5 class="card-title">The Price:$ ${house.list_price}</h5>
                 <p class="card-text">The Address:${house.location.address.line} ${house.location.address.city}, ${house.location.address.state}, ${house.location.address.postal_code}</p>
                 <a href="https://www.realtor.com/realestateandhomes-detail/${house.permalink}" class="btn btn-primary tag">Check The Listing</a>
+                
                 </div>
         </div>    
               `     
   }
      )
-    
+    console.log(homeInfo);
     return homeInfoArr.join("")
-  
+    
 }
 
 
