@@ -1,6 +1,7 @@
 let zipCode= document.getElementById("zipcode")
 let homeInfo;
 let showData = document.getElementById("showData")
+let agentInfo;
 
 async function getForSale() {
     const options = {
@@ -47,7 +48,27 @@ async function getForSale() {
 
 
 
+async function getAgents() {
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'b6fd429afdmsh5d6de1aa5a13d26p16a711jsnac8f43c6abfd',
+      'X-RapidAPI-Host': 'realty-in-us.p.rapidapi.com'
+    }
+  };
+  
+  try {
+    const response = await fetch(`https://realty-in-us.p.rapidapi.com/agents/list?postal_code=${zipcode.value}&offset=0&limit=10&sort=recent_activity_high&types=agent`, options);
+    const result = await response.json();
+    agentInfo = result.agents[0]
+    console.log(agentInfo);
 
+
+
+  } catch {
+    err=> console.error(err);
+  }
+}
 
 
   
