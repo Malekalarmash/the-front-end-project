@@ -1,6 +1,30 @@
-.btn{
+button.btn{
     height: 70px;
     background-color: #FB6444;
     color: white;
     background-size: ;
 }
+
+div.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    flex: 1 1 290px;
+  }
+
+#showData {
+    display: flex;
+    /* width: 80%; */
+    /* min-height: 80vh; */
+    flex-wrap: wrap;
+  }
+
+a.tag{
+    text-align: center;
+    background-color: #FB6444;
+    border-style: none;
+    
+}
+
