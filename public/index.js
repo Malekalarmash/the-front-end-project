@@ -28,10 +28,7 @@ async function getForSale() {
 
 //   Fucntion to loop inside the results array and to create a card that diplays the code
   function render(objectArray){
-    let homeInfoArr = [];
-    objectArray.map(house => {
-      homeInfoArr.push(house)
-      // console.log(house)
+    let homeInfoArr = objectArray.map(house => {
         return `
         <div class="card mt-5" style="width: 18rem;">
                 <img src="..." class="card-img-top" alt="...">
@@ -39,12 +36,12 @@ async function getForSale() {
                 <h5 class="card-title">The Price:$ ${house.list_price}</h5>
                 <p class="card-text">The Address:${house.location.address.line} ${house.location.address.city}, ${house.location.address.state}, ${house.location.address.postal_code}</p>
                 <a href="https://www.realtor.com/realestateandhomes-detail/${house.permalink}" class="btn btn-primary">Chick The Listing</a>
-            </div>      `     
+            </div>    
+              `     
   }
      )
     
-    console.log(homeInfoArr)
-    return homeInfoArr
+    return homeInfoArr.join("")
   
 }
 
