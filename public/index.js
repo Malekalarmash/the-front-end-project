@@ -2,6 +2,7 @@ let zipCode= document.getElementById("zipcode")
 let homeInfo;
 let showData = document.getElementById("showData")
 let agentInfo;
+let agents = document.getElementById("agents")
 
 async function getForSale() {
     const options = {
@@ -36,7 +37,8 @@ async function getForSale() {
                 <div class="card-body">
                 <h5 class="card-title">The Price:$ ${house.list_price}</h5>
                 <p class="card-text">The Address:${house.location.address.line} ${house.location.address.city}, ${house.location.address.state}, ${house.location.address.postal_code}</p>
-                <a href="https://www.realtor.com/realestateandhomes-detail/${house.permalink}" class="btn btn-primary tag">Chick The Listing</a>
+                <a href="https://www.realtor.com/realestateandhomes-detail/${house.permalink}" class="btn btn-primary tag">Check The Listing</a>
+                
                 </div>
         </div>    
               `     
@@ -59,9 +61,10 @@ async function getAgents() {
   };
   
   try {
-    const response = await fetch(`https://realty-in-us.p.rapidapi.com/agents/list?postal_code=${zipcode.value}&offset=0&limit=10&sort=recent_activity_high&types=agent`, options);
+    const response = await fetch(`https://realty-in-us.p.rapidapi.com/agents/list?postal_code=${zipcode.value}&offset=0&limit=5&sort=recent_activity_high&types=agent`, options);
     const result = await response.json();
-    agentInfo = result.agents[0]
+    agentInfo = result.agents
+    agents.innerHTML = display(agentInfo)
     console.log(agentInfo);
 
 
@@ -71,6 +74,26 @@ async function getAgents() {
   }
 }
 
+function display(agentArray){
+  let agentInfoArr = agentArray.map(agent => {
+      return `
+      <div class="card mt-5" style="width: 18rem;">
+              <img src="" class="card-img-top" alt="...">
+              <div class="card-body">
+              <h5 class="card-title">Agent Name : ${agent.person_name}</h5>
+              <h5 class= "card-title">Agent Rating : ${agent.agent_rating}</h5>
+              <h5 class= "card-title">Email: ${agent.email}</h5>
+              <p class="card-text"></p>
+              <a href="${agent.web_url}" class="btn btn-primary tag">Find Agent</a>
+              </div>
+      </div>    
+            `     
+}
+   )
+  
+  return agentInfoArr.join("")
+
+}
 
   
 
