@@ -1,6 +1,6 @@
 button.btn{
     height: 70px;
-    background-color: #FB6444;
+   background-color: rgb(255, 87, 87);
     color: white;
     background-size: ;
 }
@@ -23,8 +23,20 @@ div.card {
 
 a.tag{
     text-align: center;
-    background-color: #FB6444;
+    background-color: rgb (255, 87, 87);
     border-style: none;
     
 }
 
+.navbar-brand {
+    justify-content: space-between; 
+    color: white;
+  padding-left: 215px;
+  padding-right: 80px;
+
+}
+
+.navbar {
+background-color: rgb(255, 87, 87)
+
+}
