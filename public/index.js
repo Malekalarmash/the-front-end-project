@@ -78,7 +78,7 @@ function display(agentArray){
   let agentInfoArr = agentArray.map(agent => {
       return `
       <div class="card mt-5" style="width: 18rem;">
-              <img src="" class="card-img-top" alt="...">
+              <img src="${agent.photo.href}" class="card-img-top" alt="...">
               <div class="card-body">
               <h5 class="card-title">Agent Name : ${agent.person_name}</h5>
               <h5 class= "card-title">Agent Rating : ${agent.agent_rating}</h5>
