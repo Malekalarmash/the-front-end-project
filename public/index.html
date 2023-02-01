@@ -12,21 +12,27 @@
 <body>
     <div class="container mt-5">
         <!-- Code in this container plz! -->
-        <div class="hero-image">
-            <img src="../img/banner-update.svg" class="img-fluid" alt="JDMJ">
+        <div class="hero-image d-flex justify-content-center" style="background-color: #243343;">
+          <img src="../img/banner-update.svg" class="img-fluid" alt="JDMJ">
         </div>
-        <nav class="navbar bg-body-tertiary">
-            <form class="container-fluid justify-content-start">
-                <a class="navbar-brand" href="./index.html">For Sale</a>
-                <a class="navbar-brand" href="./agent.html">Agent</a>         
-            </form>
-        </nav>
-        <div class="input-group mb-3">
-            <input type="number" placeholder="Zip Code" id = "zipcode"class="form-control">
+
+          <div class="d-flex flex-wrap justify-content-center " style="background-color: #243343;;">
+            <nav class="navbar bg-body-tertiary " style="width: 50%;" >
+              <form class="container-fluid justify-content-around ">
+                  <a class="navbar-brand" href="./index.html"> Homes For Sale</a>
+                  <a class="navbar-brand" href="./agent.html">Find Agent</a> 
+                  <a class="navbar-brand" href="./agent.html">About The Team</a>         
+              </form>
+          </nav>
+          <div class="input-group m-5" style="width: 50%">
+            <input type="text" placeholder="Enter the Zip Code" id = "zipcode"class="form-control">
           </div>
-        <div class="d-grid gap-3 col-6 mx-auto mb-5">
+        <div class="d-grid gap-3 col- mx-auto mb-5" style="width: 50%;">
             <button type="button" class="btn" onclick="getForSale()">Search</button>
         </div>
+          </div>
+         
+  
         <!-- The cards will show here!   -->
         <div class="row" id="showData">
     
@@ -54,5 +60,8 @@
         </section>
       </footer> -->
     <script src="../public/index.js"></script>
-</body>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8hqXdS6ABsinlJaZKmD6WRN8t4ScfxbU&libraries=places&callback=activatePlacesSearch">
+  </script>  
+  </body>
 </html>
