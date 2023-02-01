@@ -18,6 +18,7 @@ async function getForSale() {
         'X-RapidAPI-Host': 'us-real-estate.p.rapidapi.com'
       }
     };
+    // userInputArray saves the value of the search input and split it
       let userInputArray = zipCode.value.split(", ")
       let city = userInputArray[0]
       let usState = userInputArray[1]
@@ -26,29 +27,24 @@ async function getForSale() {
       const response = await fetch(`https://us-real-estate.p.rapidapi.com/v2/for-sale?offset=0&limit=${limit}&state_code=${usState}&city=${city}&sort=newest`, options);
       const result = await response.json();
       homeInfo = result.data.home_search.results
-      console.dir(showData)
       showData.innerHTML = render(homeInfo)
-      loadMore.style.display = "block"
-      console.dir(loadMore)
-      
-
+      loadMore.style.display = "block"  
     } catch  {
       err => console.error(err);
     }
   }
-
+// loadMore will load 12 more homes once the button is clicked 
   loadMore.addEventListener("click", () => {
     limit += 12
     loadMore.style.display = "block"
     getForSale();
-    
-
   })
 
 //   Fucntion to loop inside the results array and to create a card that diplays the code
   function render(objectArray){
     let homeInfoArr = objectArray.map(house => {
         console.log(house)
+        // Returns card 
         return `
         <div class="card mt-5" style="width: 18rem;">
                 <img src="${house.photos[0].href}" class="card-img-top" style="height: 100%" alt="...">
@@ -64,7 +60,7 @@ async function getForSale() {
      )
     return homeInfoArr.join("") 
 }
-// Agent API
+// Fetch call to the Agent Info
 async function getAgents() {
   const options = {
     method: 'GET',
@@ -77,6 +73,7 @@ async function getAgents() {
   try {
     const response = await fetch(`https://realty-in-us.p.rapidapi.com/agents/list?postal_code=${agentZipCode.value}&offset=0&limit=5&sort=recent_activity_high&types=agent`, options);
     const result = await response.json();
+    // The result will be saved in the agentInfo var
     agentInfo = result.agents
     agents.innerHTML = display(agentInfo)
   } catch {
@@ -102,7 +99,6 @@ function display(agentArray){
    )
   
   return agentInfoArr.join("")
-
 }
 //Google Autocomplete Api
 function activatePlacesSearch () {
