@@ -8,7 +8,7 @@ async function getForSale() {
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': 'b6fd429afdmsh5d6de1aa5a13d26p16a711jsnac8f43c6abfd',
+        'X-RapidAPI-Key': 'e92f57d6ccmsh3dfe1db769bdc3cp157abfjsn46c2a47c1c0a',
         'X-RapidAPI-Host': 'us-real-estate.p.rapidapi.com'
       }
     };
