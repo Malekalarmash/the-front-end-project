@@ -4,6 +4,10 @@ let homeInfo;
 let showData = document.getElementById("showData")
 let agentInfo;
 let agents = document.getElementById("agents")
+let loadMore = document.getElementById("loadMore")
+let limit = 12; 
+
+
 
 // Homes for sale API 
 async function getForSale() {
@@ -19,18 +23,27 @@ async function getForSale() {
       let usState = userInputArray[1]
       console.log(userInputArray)
     try {
-      const response = await fetch(`https://us-real-estate.p.rapidapi.com/v2/for-sale?offset=0&limit=10&state_code=${usState}&city=${city}&sort=newest`, options);
+      const response = await fetch(`https://us-real-estate.p.rapidapi.com/v2/for-sale?offset=0&limit=${limit}&state_code=${usState}&city=${city}&sort=newest`, options);
       const result = await response.json();
       homeInfo = result.data.home_search.results
       console.dir(showData)
-    // Saves the 
       showData.innerHTML = render(homeInfo)
-      // console.log(linkInfo)
+      loadMore.style.display = "block"
+      console.dir(loadMore)
+      
 
     } catch  {
       err => console.error(err);
     }
   }
+
+  loadMore.addEventListener("click", () => {
+    limit += 12
+    loadMore.style.display = "block"
+    getForSale();
+    
+
+  })
 
 //   Fucntion to loop inside the results array and to create a card that diplays the code
   function render(objectArray){
