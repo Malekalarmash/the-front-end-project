@@ -22,10 +22,10 @@ div.card {
     flex-wrap: wrap;
   }
 
-a.tag{
-    text-align: center;
-    background-color: #FB6444;
-    border-style: none;
-    
+.navbar-brand:hover{
+  background-color: #FB6444;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
 }
 
