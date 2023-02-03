@@ -1,5 +1,4 @@
-button.btn{
-    height: 70px;
+.card .btn{
     background-color: #FB6444;
     color: white;
 }
@@ -13,6 +12,10 @@ div.card {
     flex: 1 1 290px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     
+  }
+  #taylorCard{
+    flex-direction: column;
+    flex: 1 1 290;
   }
 
 #showData {
