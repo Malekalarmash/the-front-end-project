@@ -1,5 +1,4 @@
-button.btn{
-    height: 70px;
+.card .btn{
     background-color: #FB6444;
     color: white;
 }
@@ -14,6 +13,10 @@ div.card {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     
   }
+  #taylorCard{
+    flex-direction: column;
+    flex: 1 1 290;
+  }
 
 #showData {
     display: flex;
@@ -22,11 +25,11 @@ div.card {
     flex-wrap: wrap;
   }
 
-a.tag{
-    text-align: center;
-    background-color: #FB6444;
-    border-style: none;
-    
+.navbar-brand:hover{
+  background-color: #FB6444;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
 }
 
 .pagefoot {
