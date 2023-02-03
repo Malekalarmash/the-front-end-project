@@ -22,10 +22,14 @@ div.card {
     flex-wrap: wrap;
   }
 
-.navbar-brand:hover{
+.nav-link:hover{
   background-color: #FB6444;
   padding-left: 10px;
   padding-right: 10px;
   color: white;
+}
+.active{
+  background-color: #FB6444;
+  margin: 0;
 }
 
