@@ -42,15 +42,18 @@ async function getForSale() {
 
 //   Fucntion to loop inside the results array and to create a card that diplays the code
   function render(objectArray){
+    
     let homeInfoArr = objectArray.map(house => {
         console.log(house)
+        // Adding comma to the price 
+        var price = house.list_price.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})
         // Returns card 
         return `
         <div class="card mt-5" style="width: 18rem;">
                 <img src="${house.photos[0].href}" class="card-img-top" style="height: 100%" alt="...">
                 <div class="card-body">
-                <h5 class="card-title">The Price:$ ${house.list_price}</h5>
-                <p class="card-text">The Address:${house.location.address.line} ${house.location.address.city}, ${house.location.address.state}, ${house.location.address.postal_code}</p>
+                <h5 class="card-title">The Price: $${price}</h5>
+                <p class="card-text"><b>The Address: </b>${house.location.address.line} ${house.location.address.city}, ${house.location.address.state}, ${house.location.address.postal_code}</p>
                 <a href="https://www.realtor.com/realestateandhomes-detail/${house.permalink}" class="btn" style="background-color: #FB6444; color: white" >Check The Listing</a>
                 
                 </div>
