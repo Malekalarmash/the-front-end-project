@@ -40,3 +40,6 @@ footer {
   margin-top: 20px;
   padding: 30px;
 }
+.card-body{
+  max-width: 100%;
+}
