@@ -51,7 +51,7 @@ async function getForSale() {
         return `
         <div class="card mt-5" style="width: 18rem;">
                 <img src="${house.photos[0].href}" class="card-img-top" style="height: 100%" alt="...">
-                <div class="card-body">
+                <div class="card-body" style="max-width:100%">
                 <h5 class="card-title">The Price: $${price}</h5>
                 <p class="card-text"><b>The Address: </b>${house.location.address.line} ${house.location.address.city}, ${house.location.address.state}, ${house.location.address.postal_code}</p>
                 <a href="https://www.realtor.com/realestateandhomes-detail/${house.permalink}" class="btn" style="background-color: #FB6444; color: white" target="_blank">Check The Listing</a>
@@ -74,7 +74,7 @@ async function getAgents() {
   };
   
   try {
-    const response = await fetch(`https://realty-in-us.p.rapidapi.com/agents/list?postal_code=${agentZipCode.value}&offset=0&limit=5&sort=recent_activity_high&types=agent`, options);
+    const response = await fetch(`https://realty-in-us.p.rapidapi.com/agents/list?postal_code=${agentZipCode.value}&offset=0&limit=8&sort=recent_activity_high&types=agent`, options);
     const result = await response.json();
     // The result will be saved in the agentInfo var
     agentInfo = result.agents
