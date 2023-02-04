@@ -54,7 +54,7 @@ async function getForSale() {
                 <div class="card-body">
                 <h5 class="card-title">The Price: $${price}</h5>
                 <p class="card-text"><b>The Address: </b>${house.location.address.line} ${house.location.address.city}, ${house.location.address.state}, ${house.location.address.postal_code}</p>
-                <a href="https://www.realtor.com/realestateandhomes-detail/${house.permalink}" class="btn" style="background-color: #FB6444; color: white" >Check The Listing</a>
+                <a href="https://www.realtor.com/realestateandhomes-detail/${house.permalink}" class="btn" style="background-color: #FB6444; color: white" target="_blank">Check The Listing</a>
                 
                 </div>
         </div>    
@@ -94,7 +94,7 @@ function display(agentArray){
               <h5 class= "card-title">Agent Rating : ${agent.agent_rating}</h5>
               <h5 class= "card-title">Email: ${agent.email}</h5>
               <p class="card-text"></p>
-              <a href="${agent.web_url}" class="btn" style="background-color: #FB6444; color: white">Find Agent</a>
+              <a href="${agent.web_url}" class="btn" style="background-color: #FB6444; color: white" target="_blank">Find Agent</a>
               </div>
       </div>    
             `     
