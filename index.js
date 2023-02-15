@@ -7,6 +7,14 @@ let agents = document.getElementById("agents")
 let loadMore = document.getElementById("loadMore")
 let limit = 12; 
 
+// Full screen Pop-up 
+const elem = document.getElementById("popup");
+if (elem.requestFullscreen) {
+  console.log("Screnn Mode")
+  elem.requestFullscreen();
+}
+
+
 
 
 // Homes for sale API 
